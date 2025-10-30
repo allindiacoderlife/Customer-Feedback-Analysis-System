@@ -38,15 +38,3 @@ An AI-powered customer feedback analysis system with sentiment classification, s
 ## 🌐 Live Demo
 
 **Deployed Application:** [https://customer-feedback-analysis-system.onrender.com/](https://customer-feedback-analysis-system.onrender.com/)
-
-### Available Pages:
-- **Dashboard:** Real-time statistics and interactive charts
-- **Predictor:** AI-powered sentiment analysis tool
-
-### API Endpoints:
-- `GET /api/stats` - System statistics
-- `POST /api/predict` - Sentiment prediction
-- `GET /api/trends` - Sentiment trends over time
-- `GET /health` - Health check
-
----
