@@ -1,0 +1,10 @@
+id,sentiment,original_length,summary_length,compression_ratio,summary
+5f6a7045-f2f6-41f4-a061-c0af061b0523,positive,105,105,1.0,"I found the perfect gift at this store, it was exactly what I was looking for! The staff were so helpful."
+95558515-e5a4-4507-8614-a54499c4ef85,positive,119,119,1.0,"The toy store had a great selection of puzzles and games, perfect for family fun and entertainment, we had so much fun!"
+91b266c6-4623-4156-b655-3081691fe80d,positive,125,125,1.0,"Sharp dialogue and an intriguingly unreliable narrator made this book a delight — I laughed, cringed, and kept turning pages."
+cf25706c-2706-4ee7-9584-2752b88eb9c5,negative,52,51,0.9807692307692307,This was a waste of my time and money. I'm furious!
+b9c45f6e-74e8-4ab5-8650-4086a5fb73ab,negative,83,83,1.0,"The 'Open Mic Night' was hit or miss; I enjoyed some acts, but others were painful."
+6cf05d08-79bd-467c-8095-bd4586256c4e,negative,40,40,1.0,The product was defective and dangerous.
+2f9b3145-9be2-4b31-9475-8c7bc57a53cd,neutral,35,35,1.0,It was a fairly typical experience.
+9a6f25b5-2184-4437-adcb-f346d582e677,neutral,54,54,1.0,The 'Big Box Store' was alright. The prices were okay.
+3e7034b0-042d-43b6-846d-2f3de44db364,neutral,51,51,1.0,The brand's social media presence is pretty active.

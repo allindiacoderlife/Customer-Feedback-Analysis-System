@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FeedbackAnalyzer - Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <span>Feedback Analyzer</span>
+        </div>
+
+        <div class="navbar-menu">
+          <a href="/" class="nav-link active">Dashboard</a>
+          <a href="/predictor" class="nav-link">Predictor</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Overview of customer feedback analytics</p>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Feedback</div>
+          <div class="stat-value" id="total-feedback">-</div>
+          <div class="stat-change positive" id="total-feedback-change">+0%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Average Sentiment</div>
+          <div class="stat-value" id="avg-sentiment">-</div>
+          <div class="stat-change negative" id="avg-sentiment-change">-0%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">New Issues</div>
+          <div class="stat-value" id="new-issues">-</div>
+          <div class="stat-change positive" id="new-issues-change">+0%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Resolution Rate</div>
+          <div class="stat-value" id="resolution-rate">-</div>
+          <div class="stat-change positive" id="resolution-rate-change">
+            +0%
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-grid">
+        <!-- Feedback Volume by Category -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Feedback Volume by Category</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="issues-chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Sentiment Trend Over Time -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Sentiment Trend Over Time</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="trends-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Charts -->
+      <div class="charts-grid">
+        <!-- Breakdown of Sentiment -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Breakdown of Sentiment</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="sentiment-chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Rating Distribution -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="chart-title">Rating Distribution</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="rating-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        &copy; 2025 FeedbackAnalyzer - AI-Powered Customer Feedback Analysis
+        System
+      </p>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/static/js/dashboard.js"></script>
+  </body>
+</html>

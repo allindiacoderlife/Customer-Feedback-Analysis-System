@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Predictor - Customer Feedback Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <span>Feedback Analyzer</span>
+        </div>
+
+        <div class="navbar-menu">
+          <a href="/" class="nav-link">Dashboard</a>
+          <a href="/predictor" class="nav-link active">Predictor</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Real-Time Sentiment Predictor</h1>
+        <p class="page-subtitle">Analyze customer feedback sentiment in real-time using AI</p>
+      </div>
+
+      <!-- Predictor Card -->
+      <div class="predictor-card">
+        <div class="predictor-container">
+          <!-- Input Section -->
+          <div class="predictor-input">
+            <div class="input-group">
+              <label class="input-label" for="feedback-text">
+                <span class="label-icon">✍️</span>
+                Customer Feedback Text
+              </label>
+              <textarea
+                id="feedback-text"
+                class="feedback-textarea"
+                placeholder="Type or paste customer feedback here...
+
+Example: 'The product quality is excellent, but the delivery was delayed. Overall, I'm satisfied with the purchase.'"
+                rows="8"
+              ></textarea>
+              <div class="char-counter">
+                <span id="char-count">0</span> characters
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button class="btn-primary" id="analyze-btn" onclick="analyzeSentiment()">
+                <span class="btn-icon">🔮</span>
+                Analyze Sentiment
+              </button>
+              <button class="btn-secondary" onclick="clearInput()">
+                <span class="btn-icon">🗑️</span>
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <!-- Output Section -->
+          <div class="predictor-output">
+            <div id="prediction-empty" class="prediction-empty">
+              <div class="empty-icon">🎯</div>
+              <h3>Ready to Analyze</h3>
+              <p>Enter customer feedback and click "Analyze Sentiment" to see the prediction</p>
+              <div class="feature-list">
+                <div class="feature-item">✓ Instant sentiment detection</div>
+                <div class="feature-item">✓ Confidence scores</div>
+                <div class="feature-item">✓ Multi-class probabilities</div>
+              </div>
+            </div>
+
+            <div id="prediction-result" class="prediction-result hidden">
+              <div class="result-header">
+                <h3>Analysis Result</h3>
+                <span id="analysis-time" class="analysis-time"></span>
+              </div>
+
+              <div class="sentiment-display">
+                <div class="sentiment-label">Detected Sentiment:</div>
+                <div id="sentiment-value" class="sentiment-badge">-</div>
+              </div>
+
+              <div class="confidence-section">
+                <div class="confidence-header">
+                  <span>Overall Confidence</span>
+                  <span id="confidence-text" class="confidence-percentage">0%</span>
+                </div>
+                <div class="confidence-bar">
+                  <div id="confidence-fill" class="confidence-fill" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div class="probabilities">
+                <h4 class="prob-title">Class Probabilities</h4>
+                <div class="prob-grid">
+                  <div class="prob-item positive-prob">
+                    <div class="prob-header">
+                      <span class="prob-icon">😊</span>
+                      <span class="prob-label">Positive</span>
+                    </div>
+                    <div class="prob-bar">
+                      <div id="bar-positive" class="prob-fill positive-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="prob-value" id="prob-positive">0%</span>
+                  </div>
+
+                  <div class="prob-item negative-prob">
+                    <div class="prob-header">
+                      <span class="prob-icon">😞</span>
+                      <span class="prob-label">Negative</span>
+                    </div>
+                    <div class="prob-bar">
+                      <div id="bar-negative" class="prob-fill negative-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="prob-value" id="prob-negative">0%</span>
+                  </div>
+
+                  <div class="prob-item neutral-prob">
+                    <div class="prob-header">
+                      <span class="prob-icon">😐</span>
+                      <span class="prob-label">Neutral</span>
+                    </div>
+                    <div class="prob-bar">
+                      <div id="bar-neutral" class="prob-fill neutral-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="prob-value" id="prob-neutral">0%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-actions">
+                <button class="btn-outline" onclick="analyzeSentiment()">
+                  Re-analyze
+                </button>
+                <button class="btn-outline" onclick="clearInput()">
+                  New Analysis
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/predictor.js') }}"></script>
+  </body>
+</html>
